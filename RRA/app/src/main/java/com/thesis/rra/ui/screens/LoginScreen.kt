@@ -87,7 +87,9 @@ fun LoginScreenUI(navController: NavController) {
         Spacer(modifier = Modifier.height(20.dp))
         Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
             Button(
-                onClick = { },
+                onClick = {
+                    navController.navigate(Screen.Main.route)
+                },
                 shape = RoundedCornerShape(50.dp),
                 modifier = Modifier
                     .fillMaxWidth()
