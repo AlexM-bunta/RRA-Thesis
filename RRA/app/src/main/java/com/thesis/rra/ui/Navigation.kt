@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.thesis.rra.ui.screens.LoginScreenUI
 import com.thesis.rra.ui.screens.MainScreenUI
 import com.thesis.rra.ui.screens.RegisterScreenUI
+import com.thesis.rra.ui.screens.RestaurantTypeUI
 
 @Composable
 fun Navigation() {
@@ -23,6 +24,11 @@ fun Navigation() {
         
         composable(route = Screen.Main.route) {
             MainScreenUI(navController = navController)
+        }
+
+        composable(route = Screen.RestaurantType.route + "/{type}") { backStackEntry ->
+            backStackEntry.arguments?.getString("type")
+                ?.let { RestaurantTypeUI(navController = navController, it) }
         }
     }
 }

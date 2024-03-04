@@ -1,25 +1,23 @@
 package com.thesis.rra.data
 
-import org.bson.codecs.pojo.annotations.BsonId
-import org.bson.codecs.pojo.annotations.BsonProperty
-import org.bson.types.ObjectId
+import com.google.gson.annotations.SerializedName
 
 data class Restaurant(
-    @BsonId
-    val id: ObjectId,
+    @SerializedName("_id")
+    val id: String,
 
-    @BsonProperty("Name")
+    @SerializedName("Name")
     val name: String,
 
-    @BsonProperty("Type")
+    @SerializedName("Type")
     val type: String,
 
-    @BsonProperty("Latitude")
-    val latitude: String,
+    @SerializedName("Latitude")
+    val latitude: Double,
 
-    @BsonProperty("Longitude")
-    val longitude: String,
+    @SerializedName("Longitude")
+    val longitude: Double,
 
-    @BsonProperty("Review_Stars")
-    val reviewStars: String
+    @SerializedName("Review_Stars")
+    val reviewStars: Double
 )
